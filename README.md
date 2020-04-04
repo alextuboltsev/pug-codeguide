@@ -4,42 +4,41 @@
 
 * ### Для отступов используются 2 пробела
 * ### Классы и id записываются через `.` и `#` соответственно, а не внутри скобок
-  __Неверно:__
   ```pug
+    // Неверно:
     input(class="field" id="user-name" type="text)
-  ```
-  __Верно:__
-  ```pug
+
+
+    // Верно:
     input.field#user-name(type="text)
   ```
 * ### Название тега `div` опускается, если у него есть статичный класс или id
-  __Неверно:__
   ```pug
-    div.container
-  ```
-  __Верно:__
-  ```pug
-    .container
+  // Неверно:
+  div.container
+
+  // Верно:
+  .container
   ```
 * ### Для значений атрибутов и строковых переменных используются двойные кавычки
 * ### Атрибуты разделяются запятыми
 * ### Имена тегов и названия атрибутов записаны строчными буквами
-  __Неверно:__
   ```pug
-    INPUT(Type="number")
-  ```
-  __Верно:__
-  ```pug
-    input(type="number")
+  // Неверно:
+  INPUT(Type="number")
+
+
+  // Верно:
+  input(type="number")
   ```
 * ### Отсутствуют пробелы вокруг скобок атрибутов и знака `=`
-  __Неверно:__
   ```pug
-    form( method = "POST" )
-  ```
-  __Верно:__
-  ```pug
-    form(method="POST")
+  // Неверно:
+  form( method = "POST" )
+
+
+  // Верно:
+  form(method="POST")
   ```
 
 * ### Имена переменных и миксинов записываются в нотации camelCase
@@ -47,30 +46,30 @@
   __Например:__ `input-range.pug`
 * ### Переменные перечисляются в начале файла
 * ### Для вывода повторяющихся блоков используется цикл `each`
-  __Неверно:__
   ```pug
-    ul.menu
-      li.menu__item
-        a.menu__link(href="#") Главная
-      li.menu__item
-        a.menu__link(href="#") О компании
-      li.menu__item
-        a.menu__link(href="#") Контакты
-      li.menu__item
-        a.menu__link(href="#") Оформить заказ
-  ```
-  __Верно:__
-  ```pug
-    -
-      var menu = [
-        "Главная",
-        "О компании",
-        "Контакты",
-        "Оформить заказ"
-      ]
+  // Неверно:
+  ul.menu
+    li.menu__item
+      a.menu__link(href="#") Главная
+    li.menu__item
+      a.menu__link(href="#") О компании
+    li.menu__item
+      a.menu__link(href="#") Контакты
+    li.menu__item
+      a.menu__link(href="#") Оформить заказ
+
+
+  // Верно:
+  -
+    var menu = [
+      "Главная",
+      "О компании",
+      "Контакты",
+      "Оформить заказ"
+    ]
       
-    ul.menu
-      each item in menu
-        li.menu__item
-          a.menu__link(href="#")= item
+  ul.menu
+    each item in menu
+      li.menu__item
+        a.menu__link(href="#")= item
   ```
